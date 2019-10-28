@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "326741518049",
+    "firebase_url": "https://iiuc-time.firebaseio.com",
+    "project_id": "iiuc-time",
+    "storage_bucket": "iiuc-time.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326741518049:android:339170682466b1a6",
+        "android_client_info": {
+          "package_name": "com.example.iiuctime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326741518049-96dgauv16o8frj35ln3tqt6unca8o135.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iiuctime",
+            "certificate_hash": "b9db7f3cf566ac72b7ade82fb5f24880b92f0872"
+          }
+        },
+        {
+          "client_id": "326741518049-2c7rotjph2ic3ja6sre46ivoft3hl6i2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-UAQ26VuhyOiS7xhWnrSzcZvsWjXQyZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326741518049-2c7rotjph2ic3ja6sre46ivoft3hl6i2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

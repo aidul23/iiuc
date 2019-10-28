@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:layout_marginBottom="4dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:orientation="vertical"
+        >
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/TextViewID1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date:10/11/12"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"/>
+
+
+            <TextView
+                android:id="@+id/TextViewID2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dear students today's MATH-5 class is suspended!"
+                android:textSize="18sp"
+                android:layout_marginLeft="6dp"
+                android:textAlignment="center"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
