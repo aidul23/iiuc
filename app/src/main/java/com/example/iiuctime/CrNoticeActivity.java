@@ -25,6 +25,8 @@ public class CrNoticeActivity extends AppCompatActivity {
         button = findViewById(R.id.buttonId);
         datePicker = findViewById(R.id.datePickerId);
 
+        getSupportActionBar().setTitle("Notice");
+
         textView.setText(currentdate());
 
         button.setOnClickListener(new View.OnClickListener() {

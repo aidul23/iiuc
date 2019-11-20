@@ -10,5 +10,7 @@ public class CrTeachersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cr_teachers);
+
+        getSupportActionBar().setTitle("Teacher");
     }
 }

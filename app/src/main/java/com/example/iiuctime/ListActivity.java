@@ -53,6 +53,15 @@ public class ListActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right,R.anim.silde_out_left);
             }
         });
+
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ListActivity.this, NoteActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.silde_out_left);
+            }
+        });
     }
     @Override
     public void finish() {

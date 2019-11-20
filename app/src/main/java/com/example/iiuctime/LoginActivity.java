@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     TextView textView;
@@ -23,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     Button loginbutton;
     ProgressBar progressBar;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     private FirebaseAuth mAuth;
 
 
@@ -38,6 +43,26 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordId);
         loginbutton = findViewById(R.id.Login_button);
         progressBar = findViewById(R.id.prgressbarID);
+
+        sharedPreferences = getSharedPreferences("loginRef",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+
+//        FirebaseUser user = mAuth.getCurrentUser();
+//
+//        if(user!=null){
+//
+//        }
+
+        if(sharedPreferences.getBoolean("isLogged", false))
+        {
+            Intent intent = new Intent(getApplicationContext(),CrListActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
 
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,14 +85,16 @@ public class LoginActivity extends AppCompatActivity {
     private void userlogin(){
         String id = CRid.getText().toString().trim();
         String pass = password.getText().toString().trim();
-        //String phone = editText3.getText().toString().trim();
+
+
+
 
         if(id.isEmpty()){
             CRid.setError("Enter your ID");
             CRid.requestFocus();
             return;
         }
-        if(!android.util.Patterns.EMAIL_ADDRESS.matcher(id).matches()){
+        if(!Patterns.EMAIL_ADDRESS.matcher(id).matches()){
             CRid.setError("Enter a valid ID");
             CRid.requestFocus();
             return;
@@ -91,10 +118,11 @@ public class LoginActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
 
                 if (task.isSuccessful()) {
-                    finish();
+                    sharedPreferences.edit().putBoolean("isLogged",true).apply();
                     Intent intent = new Intent(getApplicationContext(),CrListActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(getApplicationContext(),"Login Unsuccessful",Toast.LENGTH_SHORT).show();
                 }

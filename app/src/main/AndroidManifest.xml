@@ -10,9 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CrTeachersActivity"></activity>
+        <activity android:name=".NoteActivity"
+            android:parentActivityName=".ListActivity"></activity>
+        <activity android:name=".CrTeachersActivity"
+            android:parentActivityName=".CrListActivity"/>
         <activity android:name=".CrListActivity" />
-        <activity android:name=".CrNoticeActivity" />
+        <activity android:name=".CrNoticeActivity"
+            android:parentActivityName=".CrListActivity"/>
         <activity android:name=".SingupActivity" />
         <activity android:name=".LoginActivity" />
         <activity
